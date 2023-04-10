@@ -93,13 +93,17 @@ const updateComplete = (updateId, isChecked) => {
 
 const logout = () => {
   //로그아웃 버튼 클릭시 로그아웃! 메시지와 함께 ‘login’로컬스토리지 자체를 ‘삭제’해야합니다! 그 후 signin.html로 이동해야합니다
-  const loginedUser = localStorage.getItem("login");
-  if (loginedUser) {
-    alert("로그아웃!");
-    localStorage.setItem("login", "");
-    location.href = "./signin.html";
-  }
+
+  alert("로그아웃!");
+  localStorage.removeItem("login");
+  location.href = "./signin.html";
 };
+// 원래 짰던 코드
+// const loginedUser = localStorage.getItem("login");
+// if (loginedUser) {
+//   alert("로그아웃!");
+//   localStorage.setItem("login", "");
+//   location.href = "./signin.html";
 
 const init = () => {
   isLogin();
